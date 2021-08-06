@@ -8,4 +8,6 @@ const userEvents = require('./user/events')
 $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', userEvents.onSignUp)
+  $('#sign-in').on('submit', userEvents.onSignIn)
+  $('#sign-out').hide()
 })
