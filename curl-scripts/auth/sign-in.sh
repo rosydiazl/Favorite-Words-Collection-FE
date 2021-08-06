@@ -1,7 +1,7 @@
 #!/bin/bash
 # EMAIL="neks@lass.com" PASSWORD="new" sh curl-scripts/auth/sign-in.sh
 
-curl  "http://localhost:4741/sign-in" \
+curl  "https://immense-anchorage-35552.herokuapp.com/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

@@ -1,7 +1,7 @@
 #!/bin/bash
-# EMAIL="neks@lass.com" PASSWORD="new" PASSWORD="new" sh curl-scripts/auth/sign-up.sh 
+# EMAIL="neks@lass.com" PASSWORD="new" PASSWORD="new" sh curl-scripts/auth/sign-up.sh
 
-curl "http://localhost:4741/sign-up" \
+curl "https://immense-anchorage-35552.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
