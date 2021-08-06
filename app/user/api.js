@@ -10,3 +10,7 @@ const signUp = function (data) {
     data: data
   })
 }
+
+module.exports = {
+  signUp
+}
