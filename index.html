@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Rosy's Application</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,43 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Favorite Words Collection</h1>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+              <div class="tile">
+                <div class="login show">
+                  <form id="sign-in">
+                    <div class="form-group">
+                      <input name="credentials[email]" type="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                      <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
+                    </div>                    <button type="submit" class="btn btn-info btn-block">Sign in</button>
+                  </form>
+                </div><!-- login -->
+                <div class="signup">
+                  <form id="sign-up">
+                    <div class="form-group">
+                    </div><!-- group -->
+                    <div class="form-group">
+                      <input name="credentials[email]" type="email" class="form-control" placeholder="Email" required>
+                    </div><!-- group -->
+                    <div class="form-group">
+                      <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
+                      <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password confirmation" required>
+                    </div><!-- group -->
+                    <button type="submit" class="btn btn-warning btn-block signup-btn"><span>Sign up</span></button>
+                    <div class="text-center"><a href="#">Forgot password?</a></div>
+                  </form>
+                </div>
+                <span class="btn btn-warning btn-signup">Sign up</span>
+                <span class="btn btn-info btn-login hidden">Sign in</span>
+              </div><!-- tile -->
+            </div><!-- col-6 -->
+          </div><!-- row -->
+        </div><!-- container -->
+      </section>
     </body>
 </html>
