@@ -13,8 +13,9 @@
     </head>
     <body>
       <h1>Favorite Words Collection</h1>
+      <img src="app/Images/book.png" class="book-image">
       <section>
-        <div class="container">
+        <div id="container">
           <div class="row">
             <div class="col-sm-offset-3 col-sm-6">
               <div class="tile">
@@ -28,6 +29,7 @@
                     </div>                    <button type="submit" class="btn btn-info btn-block">Sign in</button>
                   </form>
                 </div><!-- login -->
+                <div class="signup">
 
                   <form id="sign-up">
                     <div class="form-group">
@@ -37,21 +39,37 @@
                     </div><!-- group -->
                     <div class="form-group">
                       <input name="credentials[password]" type="password" class="form-control" placeholder="Password" required>
-                      <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password confirmation" required>
+                      <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Confirm password" required>
                     </div><!-- group -->
                     <button type="submit" class="btn btn-warning btn-block signup-btn"><span>Sign up</span></button>
-                    <div class="text-center"><a href="#">Forgot password?</a></div>
-                  </form>
 
+                  </form>
+                  </div>
                 <span class="btn btn-warning btn-signup">Sign up</span>
                 <span class="btn btn-info btn-login hidden">Sign in</span>
-                <button id="sign-out" type="submit" class="btn btn-info btn-block">Sign out</button>
               </div><!-- tile -->
             </div><!-- col-6 -->
           </div><!-- row -->
         </div><!-- container -->
       </section>
-
-      <p id="message"></p>
+      <p class="text-center" id="message"></p>
+      <p class="text-center" id="sign-out-message"></p>
+      <button id="sign-out" type="submit">Sign out</button>
+      <button id="change-password" type="submit">Change password</button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="change-password-form">
+            <div class="form-group">
+            <label>Old password</label>
+            <input name="passwords[old]" type="password">
+            <label>New password</label>
+            <input name="passwords[new]" type="password">
+            </div>
+            <input class="btn btn-info btn-block" type="submit" value="Change password">
+          </form>
+          <p id="change-password-message"></p>
+        </div>
+      </div>
     </body>
 </html>

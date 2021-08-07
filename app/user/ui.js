@@ -16,20 +16,54 @@ const onSignInSuccess = function (data) {
   store.user = data.user
   // console.log('Sign in successful. Data is: ', data)
   $('form').trigger('reset')
-  // $('#sign-out').show()
+  $('#sign-out').show()
+  $('#change-password').show()
   $('#sign-in').hide()
   $('#sign-up').hide()
-  // $('#sign-out-message').text('')
+  $('#sign-out-message').text('')
+  $('.btn-signup').hide()
+  $('.btn-login').hide()
+  $('.tile').hide()
+  $('.book-image').show()
 }
 
 const onSignInFailure = function () {
   $('#message').text('Sign in failed.')
   // console.error('Sign in failed. Error is: ', error.status)
 }
+const onSignOutSuccess = function () {
+  $('#sign-out-message').text('Log out successful. Come back soon!')
+  // $('form').trigger('reset')
+  // console.log('Sign out successfully and nothing was returned.')
+  $('#sign-in').show()
+  $('#sign-out').hide()
+  $('.tile').show()
+  $('#change-password').hide()
+  $('#message').text('')
+}
 
+const onSignOutFailure = function () {
+  $('#sign-out-message').text('Sign out failed.')
+// console.error('Sign out failed. Error is: ', error.status)
+}
+
+const onChangePasswordSuccess = function (data) {
+  $('#change-password-message').text('Password has been changed.')
+  $('form').trigger('reset')
+  console.log('Data is', data)
+}
+
+const onChangePasswordFailure = function (error) {
+  $('#change-password-message').text('Unable to change password')
+  console.log('Error is', error.status)
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignInSuccess,
-  onSignInFailure
+  onSignInFailure,
+  onSignOutSuccess,
+  onSignOutFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure
 }
