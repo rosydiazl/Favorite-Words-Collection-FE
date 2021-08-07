@@ -40,6 +40,7 @@ const onSignOutSuccess = function () {
   $('.tile').show()
   $('#change-password').hide()
   $('#message').text('')
+  $('.book-image').hide()
 }
 
 const onSignOutFailure = function () {
@@ -50,7 +51,6 @@ const onSignOutFailure = function () {
 const onChangePasswordSuccess = function (data) {
   $('#change-password-message').text('Password has been changed.')
   $('form').trigger('reset')
-  console.log('Data is', data)
 }
 
 const onChangePasswordFailure = function (error) {
