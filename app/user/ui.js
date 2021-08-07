@@ -5,6 +5,7 @@ const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully!')
   // console.log('Sign up successful. Data is: ', data)
   $('form').trigger('reset')
+  $('.btn-signup').hide()
 }
 
 const onSignUpFailure = function () {
