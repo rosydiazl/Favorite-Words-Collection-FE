@@ -14,6 +14,7 @@ $(() => {
   $('#change-password').hide()
   $('.book-image').hide()
   $('#sign-out').on('click', userEvents.onSignOut)
+  $('.btn-login').hide()
 })
 
 $('.btn-signup').click(function () {
@@ -21,6 +22,8 @@ $('.btn-signup').click(function () {
   $('.signup').addClass('show')
   $('.login').removeClass('show')
   $('.btn-login').removeClass('hidden')
+  $('.btn-login').show()
+  // $('.btn-signup').hide()
 })
 $('.btn-login').click(function () {
   $(this).addClass('hidden')
