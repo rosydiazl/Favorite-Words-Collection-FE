@@ -42,9 +42,30 @@ const onChangePassword = function (event) {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 }
+
+const onCreateWord = function (event) {
+  event.preventDefault()
+  // console.log('Created word')
+
+  const data = getFormFields(this)
+  api.createWord(data)
+    .then(ui.onCreateWordSuccess)
+    .catch(ui.onCreateWordFailure)
+}
+const onShowWords = function (event) {
+  event.preventDefault()
+  // console.log('Show words')
+
+  const data = getFormFields(this)
+  api.showWords(data)
+    .then(ui.onShowWordsSuccess)
+    .catch(ui.onShowWordsFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onChangePassword
+  onChangePassword,
+  onCreateWord,
+  onShowWords
 }

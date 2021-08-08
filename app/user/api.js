@@ -37,9 +37,31 @@ const changePassword = function (data) {
     }
   })
 }
+const createWord = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/words',
+    method: 'POST',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+const showWords = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/words',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createWord,
+  showWords
 }

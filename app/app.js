@@ -10,6 +10,8 @@ $(() => {
   $('#sign-up').on('submit', userEvents.onSignUp)
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#change-password-form').on('submit', userEvents.onChangePassword)
+  $('#create-word').on('submit', userEvents.onCreateWord)
+  $('#words-index').on('click', userEvents.onShowWords)
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.book-image').hide()

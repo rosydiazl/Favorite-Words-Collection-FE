@@ -5,7 +5,7 @@ const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully!')
   // console.log('Sign up successful. Data is: ', data)
   $('form').trigger('reset')
-  $('.btn-signup').hide()
+  // $('.btn-signup').hide()
 }
 
 const onSignUpFailure = function () {
@@ -58,6 +58,27 @@ const onChangePasswordFailure = function (error) {
   $('#change-password-message').text('Unable to change password')
   console.log('Error is', error.status)
 }
+const onCreateWordSuccess = function (data) {
+  $('#create-word-message').text('Word has been created')
+  $('form').trigger('reset')
+  console.log('Data is: ', data)
+}
+
+const onCreateWordFailure = function (error) {
+  $('#create-word-message').text('Unable to create word')
+  console.log('Error is: ', error.status)
+}
+const onShowWordsSuccess = function (data) {
+  store.user = data.user
+  $('#show-words-message').text('Your words: ' + data)
+ //  $('form').trigger('reset')
+  console.log('Data is: ', data)
+}
+
+const onShowWordsFailure = function (error) {
+  $('#show-words-message').text('Unable to show words')
+  console.log('Error is: ', error.status)
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -66,5 +87,9 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure
+  onChangePasswordFailure,
+  onCreateWordSuccess,
+  onCreateWordFailure,
+  onShowWordsSuccess,
+  onShowWordsFailure
 }
