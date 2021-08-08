@@ -41,10 +41,10 @@ const createWord = function (data) {
   return $.ajax({
     url: config.apiUrl + '/words',
     method: 'POST',
-    data: data,
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: data
   })
 }
 const showWords = function (data) {
