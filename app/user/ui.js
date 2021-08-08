@@ -26,6 +26,8 @@ const onSignInSuccess = function (data) {
   $('.btn-login').hide()
   $('.tile').hide()
   $('.book-image').show()
+  $('#create-word').show()
+  $('#words-index').show()
 }
 
 const onSignInFailure = function () {
@@ -69,8 +71,9 @@ const onCreateWordFailure = function (error) {
   console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
+  // const object = JSON.parse(data)
   store.user = data.user
-  $('#show-words-message').text('Your words: ' + data)
+  $('#show-words-message').text('Your words: ' + JSON.stringify(data.words))
  //  $('form').trigger('reset')
   console.log('Data is: ', data)
 }
