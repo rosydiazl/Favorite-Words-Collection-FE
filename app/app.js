@@ -16,6 +16,8 @@ $(() => {
   $('#create-word').hide()
   $('#words-index').on('click', userEvents.onShowWords)
   $('#words-index').hide()
+  $('#delete-word').on('submit', userEvents.onDeleteWord)
+  $('#delete-word').hide()
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.book-image').hide()

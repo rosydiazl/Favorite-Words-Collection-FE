@@ -76,6 +76,20 @@ const onUpdateWord = function (event) {
     .then(ui.onUpdateWordSuccess)
     .catch(ui.onUpdateWordFailure)
 }
+const onDeleteWord = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const deleteData = getFormFields(form)
+  console.log('Word to delete is: ', deleteData)
+
+  const deleteId = deleteData.word._id
+  console.log('deletedId is: ', deleteId)
+
+  api.deleteWord(deleteId)
+    .then(ui.onDeleteWordSuccess)
+    .catch(ui.onDeleteWordFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -83,5 +97,6 @@ module.exports = {
   onChangePassword,
   onCreateWord,
   onShowWords,
-  onUpdateWord
+  onUpdateWord,
+  onDeleteWord
 }
