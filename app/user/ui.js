@@ -86,9 +86,9 @@ const onShowWordsSuccess = function (data) {
     <p>Sentence: ${word.sentence}</p>`
   })
 
-  // if (data === '') {
-   // $('#show-words-message').text('No words have been created.')
-  // }
+  if (data.words.length === 0) {
+    $('#show-words-message').text('No words have been created.')
+  }
   $('#words').html(wordTitlesHtml)
   $('form').trigger('reset')
 }
