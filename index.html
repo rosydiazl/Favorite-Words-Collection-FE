@@ -85,8 +85,24 @@
       <input name="word[language]" type="text">
       <label>Sentence</label>
       <input name="word[sentence]" type="text">
-      <input type="submit" value="Create word">
+      <input type="submit" value="Create">
       </form>
+      <form id="update-word">
+        <label>Word ID</label>
+        <input name="word[_id]" type="text">
+        <label>Word</label>
+        <input name="word[word]" type="text">
+        <label>Definition</label>
+        <input name="word[definition]" type="text">
+        <label>Origin</label>
+        <input name="word[origin]" type="text">
+        <label>Language</label>
+        <input name="word[language]" type="text">
+        <label>Sentence</label>
+        <input name="word[sentence]" type="text">
+        <input type="submit" value="Update">
+      </form>
+      <p id="update-word-message"></p>
       <p id="create-word-message"></p>
       <button id="words-index">Show words</button>
       <p id="show-words-message"></p>
