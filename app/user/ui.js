@@ -28,6 +28,7 @@ const onSignInSuccess = function (data) {
   $('.book-image').show()
   $('#create-word').show()
   $('#words-index').show()
+  $('#update-word').show()
 }
 
 const onSignInFailure = function () {
@@ -71,6 +72,8 @@ const onCreateWordFailure = function (error) {
   console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
+  $('#show-words-message').text('')
+  $('#create-word-message').text('')
   console.log('Data in showWordSuccess is: ', data)
   const words = data.words
 
@@ -97,6 +100,16 @@ const onShowWordsFailure = function (error) {
   $('#show-words-message').text('Unable to show words')
   console.log('Error is: ', error.status)
 }
+const onUpdateWordSuccess = function (response) {
+  $('#update-word-message').text('Word was updated successfully')
+  // console.log(`Server response: ${response}`)
+  $('form').trigger('reset')
+}
+
+const onUpdateWordFailure = function (error) {
+  $('#update-word-message').text('Unable to update word')
+  console.log('Error is ', error.status)
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -109,5 +122,7 @@ module.exports = {
   onCreateWordSuccess,
   onCreateWordFailure,
   onShowWordsSuccess,
-  onShowWordsFailure
+  onShowWordsFailure,
+  onUpdateWordSuccess,
+  onUpdateWordFailure
 }

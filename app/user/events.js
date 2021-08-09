@@ -62,11 +62,26 @@ const onShowWords = function () {
     .then(ui.onShowWordsSuccess)
     .catch(ui.onShowWordsFailure)
 }
+const onUpdateWord = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const wordData = getFormFields(form)
+  console.log('Updated word is: ', wordData)
+
+  const wordId = wordData.word._id
+  console.log('Word ID is ', wordData.word._id)
+
+  api.updateWord(wordId, wordData)
+    .then(ui.onUpdateWordSuccess)
+    .catch(ui.onUpdateWordFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
   onChangePassword,
   onCreateWord,
-  onShowWords
+  onShowWords,
+  onUpdateWord
 }
