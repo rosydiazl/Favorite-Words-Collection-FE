@@ -18,7 +18,7 @@ $(() => {
   $('#change-password').hide()
   $('.book-image').hide()
   $('#sign-out').on('click', userEvents.onSignOut)
-  $('.btn-login').hide()
+  // $('.btn-login').hide()
 })
 
 $('.btn-signup').click(function () {

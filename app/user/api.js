@@ -49,6 +49,7 @@ const createWord = function (data) {
 }
 const showWords = function (data) {
   return $.ajax({
+    // url: config.apiUrl + '/words?owner=' + store.user._id,
     url: config.apiUrl + '/words',
     method: 'GET',
     headers: {

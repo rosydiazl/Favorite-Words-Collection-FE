@@ -15,7 +15,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   store.user = data.user
-  // console.log('Sign in successful. Data is: ', data)
+  console.log('Sign in successful. Data is: ', data.user)
   $('form').trigger('reset')
   $('#sign-out').show()
   $('#change-password').show()
@@ -71,11 +71,22 @@ const onCreateWordFailure = function (error) {
   console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
-  // const object = JSON.parse(data)
-  store.user = data.user
-  $('#show-words-message').text('Your words: ' + JSON.stringify(data.words))
- //  $('form').trigger('reset')
-  console.log('Data is: ', data)
+  console.log('Data in showWordSuccess is: ', store.user._id)
+  const words = data.words
+
+  let wordTitlesHtml = ''
+
+  words.forEach(word => {
+    console.log(word)
+    wordTitlesHtml += `
+    <p> Word: ${word.word}</p>
+    <p> Definition: ${word.definition}</p>
+    <p>Origin: ${word.origin}</p>
+    <p>Language: ${word.language}</p>
+    <p>Sentence: ${word.sentence}</p>`
+  })
+  $('#words').html(wordTitlesHtml)
+  $('form').trigger('reset')
 }
 
 const onShowWordsFailure = function (error) {
