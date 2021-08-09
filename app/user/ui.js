@@ -71,7 +71,7 @@ const onCreateWordFailure = function (error) {
   console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
-  console.log('Data in showWordSuccess is: ', store.user._id)
+  console.log('Data in showWordSuccess is: ', data)
   const words = data.words
 
   let wordTitlesHtml = ''
@@ -85,6 +85,10 @@ const onShowWordsSuccess = function (data) {
     <p>Language: ${word.language}</p>
     <p>Sentence: ${word.sentence}</p>`
   })
+
+  // if (data === '') {
+   // $('#show-words-message').text('No words have been created.')
+  // }
   $('#words').html(wordTitlesHtml)
   $('form').trigger('reset')
 }
