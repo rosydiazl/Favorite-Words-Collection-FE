@@ -59,7 +59,7 @@ const showWords = function (data) {
 }
 const updateWord = function (id, wordData) {
   return $.ajax({
-    url: config.apiUrl + '/words' + id,
+    url: config.apiUrl + '/words/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -67,6 +67,16 @@ const updateWord = function (id, wordData) {
     data: wordData
   })
 }
+const deleteWord = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/words/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -74,5 +84,6 @@ module.exports = {
   changePassword,
   createWord,
   showWords,
-  updateWord
+  updateWord,
+  deleteWord
 }
