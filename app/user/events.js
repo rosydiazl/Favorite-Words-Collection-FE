@@ -1,6 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../lib/get-form-fields')
+const store = require('../store')
 // const store = require('../store')
 
 const api = require('./api')
@@ -52,12 +53,12 @@ const onCreateWord = function (event) {
     .then(ui.onCreateWordSuccess)
     .catch(ui.onCreateWordFailure)
 }
-const onShowWords = function (event) {
-  event.preventDefault()
+const onShowWords = function () {
+  // event.preventDefault()
   // console.log('Show words')
 
-  const data = getFormFields(this)
-  api.showWords(data)
+  // const data = getFormFields(this)
+  api.showWords()
     .then(ui.onShowWordsSuccess)
     .catch(ui.onShowWordsFailure)
 }
