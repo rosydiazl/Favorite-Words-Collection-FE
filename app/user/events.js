@@ -1,9 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../lib/get-form-fields')
-const store = require('../store')
 // const store = require('../store')
-
 const api = require('./api')
 const ui = require('./ui')
 
@@ -90,6 +88,20 @@ const onDeleteWord = function (event) {
     .then(ui.onDeleteWordSuccess)
     .catch(ui.onDeleteWordFailure)
 }
+const onShowWord = function (event) {
+  event.preventDefault()
+
+  const form = event.target
+  const wordData = getFormFields(form)
+  console.log('Word is: ', wordData)
+
+  const wordId = wordData.word._id
+
+  api
+    .showWord(wordId)
+    .then(ui.onShowWordSuccess)
+    .catch(ui.onShowWordFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -98,5 +110,6 @@ module.exports = {
   onCreateWord,
   onShowWords,
   onUpdateWord,
-  onDeleteWord
+  onDeleteWord,
+  onShowWord
 }

@@ -76,6 +76,15 @@ const deleteWord = function (id) {
     }
   })
 }
+const showWord = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/words/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   signUp,
@@ -85,5 +94,6 @@ module.exports = {
   createWord,
   showWords,
   updateWord,
-  deleteWord
+  deleteWord,
+  showWord
 }

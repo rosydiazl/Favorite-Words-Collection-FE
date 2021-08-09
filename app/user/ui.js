@@ -30,6 +30,8 @@ const onSignInSuccess = function (data) {
   $('#words-index').show()
   $('#update-word').show()
   $('#delete-word').show()
+  $('#show-word').show()
+  $('#myTopNav').show()
 }
 
 const onSignInFailure = function () {
@@ -121,6 +123,22 @@ const onDeleteWordFailure = function () {
   $('#delete-word-message').text('Unable to delete word')
   // console.log('Error is ', error.status)
 }
+const onShowWordSuccess = function (data) {
+  $('#delete-word-message').text('Word was shown successfully.')
+  // console.log(`Server response: ${response}`)
+  $('#shown-word').html(`
+  <p> Word: ${data.word.word}</p>
+    <p> Definition: ${data.word.definition}</p>
+    <p>Origin: ${data.word.origin}</p>
+    <p>Language: ${data.word.language}</p>
+    <p>Sentence: ${data.word.sentence}</p>`)
+  $('form').trigger('reset')
+}
+
+const onShowWordFailure = function () {
+  $('#delete-word-message').text('Unable to show word')
+  // console.log('Error is ', error.status)
+}
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -137,5 +155,7 @@ module.exports = {
   onUpdateWordSuccess,
   onUpdateWordFailure,
   onDeleteWordSuccess,
-  onDeleteWordFailure
+  onDeleteWordFailure,
+  onShowWordSuccess,
+  onShowWordFailure
 }
