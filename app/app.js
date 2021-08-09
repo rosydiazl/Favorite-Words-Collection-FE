@@ -18,7 +18,7 @@ $(() => {
   $('#change-password').hide()
   $('.book-image').hide()
   $('#sign-out').on('click', userEvents.onSignOut)
-  // $('.btn-login').hide()
+  $('.btn-login').hide()
 })
 
 $('.btn-signup').click(function () {
@@ -27,13 +27,15 @@ $('.btn-signup').click(function () {
   $('.login').removeClass('show')
   $('.btn-login').removeClass('hidden')
   $('.btn-login').show()
-  // $('.btn-signup').hide()
+  $('.btn-signup').hide()
 })
 $('.btn-login').click(function () {
   $(this).addClass('hidden')
   $('.signup').removeClass('show')
   $('.login').addClass('show')
   $('.btn-signup').removeClass('hidden')
+  $('.btn-login').hide()
+  $('.btn-signup').show()
 })
 
 // Get the modal
