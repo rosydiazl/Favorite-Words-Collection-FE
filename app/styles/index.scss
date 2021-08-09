@@ -5,6 +5,12 @@
   padding: 80px 15px;
   font-family: 'Roboto', sans-serif;
 }
+.row {
+  display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .tile
 {
   display:inline-block;
