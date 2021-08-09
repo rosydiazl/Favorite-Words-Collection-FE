@@ -18,11 +18,14 @@ $(() => {
   $('#words-index').hide()
   $('#delete-word').on('submit', userEvents.onDeleteWord)
   $('#delete-word').hide()
+  $('#show-word').hide()
+  $('#show-word').on('submit', userEvents.onShowWord)
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.book-image').hide()
   $('#sign-out').on('click', userEvents.onSignOut)
   $('.btn-login').hide()
+  $('#myTopNav').hide()
 })
 
 $('.btn-signup').click(function () {
@@ -67,3 +70,13 @@ window.onclick = function (event) {
     modal.style.display = 'none'
   }
 }
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+const myFunction = function () {
+  const x = document.getElementById('myTopNav')
+  if (x.className === 'topnav') {
+    x.className += ' responsive'
+  } else {
+    x.className = 'topnav'
+  }
+}
+myFunction()
