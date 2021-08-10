@@ -49,6 +49,11 @@ const onSignOutSuccess = function () {
   $('#change-password').hide()
   $('#message').text('')
   $('.book-image').hide()
+  $('#myTopNav').hide()
+  $('.bottom-container').show()
+  $('#update-word').hide()
+  $('#delete-word').hide()
+  $('#show-word').hide()
 }
 
 const onSignOutFailure = function () {
@@ -86,11 +91,14 @@ const onShowWordsSuccess = function (data) {
   words.forEach(word => {
     console.log(word)
     wordTitlesHtml += `
+    <button class='dynamic-update-word' data-id=${word._id}>Edit</button>
+    <button class='dynamic-delete-word' data-id=${word._id}>Delete</button>
     <h5> ${word.word}</h5>
     <p> Definition: ${word.definition} </p>
     <p> Origin: ${word.origin} </p>
     <p> Language: ${word.language} </p>
-    <p> Sentence: ${word.sentence}</p>`
+    <p> Sentence: ${word.sentence}</p>
+  `;
   })
 
   if (data.words.length === 0) {
@@ -117,7 +125,7 @@ const onUpdateWordFailure = function () {
 const onDeleteWordSuccess = function () {
   $('#delete-word-message').text('Word was deleted successfully.')
   // console.log(`Server response: ${response}`)
-  $('form').trigger('reset')
+  // $('#words').filter('_id')
 }
 
 const onDeleteWordFailure = function () {

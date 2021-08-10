@@ -101,6 +101,23 @@ const onShowWord = function (event) {
     .then(ui.onShowWordSuccess)
     .catch(ui.onShowWordFailure)
 }
+const onDynamicDeleteWord = function (event) {
+  console.log($(event.target).data('id'))
+  const wordId = $(event.target).data('id')
+
+  api.deleteWord(wordId)
+    .then(ui.onDeleteWordSuccess)
+    .catch(ui.onDeleteWordFailure)
+}
+const onDynamicUpdateWord = function (event) {
+  console.log($(event.target).data('id'))
+  const wordId = $(event.target).data('id')
+
+  api
+    .updateWord(wordId)
+    .then(ui.onUpdateWordSuccess)
+    .catch(ui.onUpdateWordFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -110,5 +127,7 @@ module.exports = {
   onShowWords,
   onUpdateWord,
   onDeleteWord,
-  onShowWord
+  onShowWord,
+  onDynamicDeleteWord,
+  onDynamicUpdateWord
 }

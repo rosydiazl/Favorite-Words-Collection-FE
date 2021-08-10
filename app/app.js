@@ -16,7 +16,7 @@ $(() => {
   $('#create-word').hide()
   $('#words-index').on('click', userEvents.onShowWords)
   $('#words-index').hide()
-  $('#delete-word').on('submit', userEvents.onDeleteWord)
+  $('#delete-word').on('click', userEvents.onDeleteWord)
   $('#delete-word').hide()
   $('#show-word').hide()
   $('#show-word').on('submit', userEvents.onShowWord)
@@ -27,8 +27,13 @@ $(() => {
   $('#sign-out').on('click', userEvents.onSignOut)
   $('.btn-login').hide()
   $('#myTopNav').hide()
+  $('#words').on('click', '.dynamic-delete-word', userEvents.onDynamicDeleteWord)
 })
 
+// $('#delete-word').on('click', function () {
+ // $('.dataId').data()
+ // $('#delete-word').on(userEvents.onDeleteWord)
+// })
 $('#createWords').on('click', function () {
   $('#create-word').show()
 })
