@@ -32,6 +32,7 @@ const onSignInSuccess = function (data) {
   $('#delete-word').show()
   $('#show-word').show()
   $('#myTopNav').show()
+  $('.bottom-container').hide()
 }
 
 const onSignInFailure = function () {
