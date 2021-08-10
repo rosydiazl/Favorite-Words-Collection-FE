@@ -20,12 +20,17 @@ $(() => {
   $('#delete-word').hide()
   $('#show-word').hide()
   $('#show-word').on('submit', userEvents.onShowWord)
+  // $('#createWords').on('click', ('#create-word').show())
   $('#sign-out').hide()
   $('#change-password').hide()
   $('.book-image').hide()
   $('#sign-out').on('click', userEvents.onSignOut)
   $('.btn-login').hide()
   $('#myTopNav').hide()
+})
+
+$('#createWords').on('click', function () {
+  $('#create-word').show()
 })
 
 $('.btn-signup').click(function () {

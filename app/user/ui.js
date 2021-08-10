@@ -26,7 +26,7 @@ const onSignInSuccess = function (data) {
   $('.btn-login').hide()
   $('.tile').hide()
   $('.book-image').show()
-  $('#create-word').show()
+  // $('#create-word').show()
   $('#words-index').show()
   $('#update-word').show()
   $('#delete-word').show()

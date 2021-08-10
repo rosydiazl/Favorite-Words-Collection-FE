@@ -161,7 +161,7 @@ a
 }
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #444444;
+  background-color: #323439;
   overflow: hidden;
 }
 
@@ -184,7 +184,7 @@ a
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: pink;
   color: white;
 }
 
@@ -204,7 +204,9 @@ a
 #title {
   float: left;
   font-size: 1.5em;
+  pointer-events: none;
 }
+
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {display: none;}
@@ -238,4 +240,37 @@ a
         top: 30%; /* Adjust this value to move the positioned div up and down */
         text-align: left;
         width: 50%; /* Set the width of the positioned div */
+}
+
+#create-word {
+  position: absolute;
+  float: right;
+  text-align: right;
+  left: 0;
+  right: 15%;
+  top: 30%; /* Adjust this value to move the positioned div up and down */
+  width: 50%; /* Set the width of the positioned div */
+}
+
+
+.bottom-container {
+  background-color: #323439;
+   position: fixed;
+   margin: 0;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+}
+
+.pcolor {
+  color: #EAF6F6;
+  text-align: center;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #11999E;
+  padding: 1%;
+  text-align: center;
 }
