@@ -85,11 +85,11 @@ const onShowWordsSuccess = function (data) {
   words.forEach(word => {
     console.log(word)
     wordTitlesHtml += `
-    <p> Word: ${word.word}</p>
-    <p> Definition: ${word.definition}</p>
-    <p>Origin: ${word.origin}</p>
-    <p>Language: ${word.language}</p>
-    <p>Sentence: ${word.sentence}</p>`
+    <h5> ${word.word}</h5>
+    <p> Definition: ${word.definition} </p>
+    <p> Origin: ${word.origin} </p>
+    <p> Language: ${word.language} </p>
+    <p> Sentence: ${word.sentence}</p>`
   })
 
   if (data.words.length === 0) {
@@ -125,7 +125,6 @@ const onDeleteWordFailure = function () {
 }
 const onShowWordSuccess = function (data) {
   $('#delete-word-message').text('Word was shown successfully.')
-  // console.log(`Server response: ${response}`)
   $('#shown-word').html(`
   <p> Word: ${data.word.word}</p>
     <p> Definition: ${data.word.definition}</p>
@@ -133,6 +132,7 @@ const onShowWordSuccess = function (data) {
     <p>Language: ${data.word.language}</p>
     <p>Sentence: ${data.word.sentence}</p>`)
   $('form').trigger('reset')
+  console.log('Data word is: ', data.word)
 }
 
 const onShowWordFailure = function () {

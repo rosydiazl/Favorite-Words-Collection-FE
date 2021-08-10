@@ -76,13 +76,14 @@ const deleteWord = function (id) {
     }
   })
 }
-const showWord = function (id) {
+const showWord = function (id, wordData) {
   return $.ajax({
     url: config.apiUrl + '/words/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    data: wordData
   })
 }
 

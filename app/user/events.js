@@ -97,8 +97,7 @@ const onShowWord = function (event) {
 
   const wordId = wordData.word._id
 
-  api
-    .showWord(wordId)
+  api.showWord(wordId)
     .then(ui.onShowWordSuccess)
     .catch(ui.onShowWordFailure)
 }
