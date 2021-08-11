@@ -65,10 +65,10 @@ const onUpdateWord = function (event) {
 
   const form = event.target
   const wordData = getFormFields(form)
-  console.log('Updated word is: ', wordData)
+  // console.log('Updated word is: ', wordData)
 
   const wordId = wordData.word._id
-  console.log('Word ID is ', wordData.word._id)
+  // console.log('Word ID is ', wordData.word._id)
 
   api.updateWord(wordId, wordData)
     .then(ui.onUpdateWordSuccess)
@@ -79,10 +79,10 @@ const onDeleteWord = function (event) {
 
   const form = event.target
   const deleteData = getFormFields(form)
-  console.log('Word to delete is: ', deleteData)
+  // console.log('Word to delete is: ', deleteData)
 
   const deleteId = deleteData.word._id
-  console.log('deletedId is: ', deleteId)
+  // console.log('deletedId is: ', deleteId)
 
   api.deleteWord(deleteId)
     .then(ui.onDeleteWordSuccess)
@@ -93,7 +93,7 @@ const onShowWord = function (event) {
 
   const form = event.target
   const wordData = getFormFields(form)
-  console.log('Word is: ', wordData)
+  // console.log('Word is: ', wordData)
 
   const wordId = wordData.word._id
 

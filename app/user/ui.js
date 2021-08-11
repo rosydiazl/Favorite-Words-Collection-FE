@@ -22,7 +22,7 @@ const onSignUpFailure = function () {
 const onSignInSuccess = function (data) {
   $('#message').text('Signed in successfully!')
   store.user = data.user
-  console.log('Sign in successful. Data is: ', data.user)
+  // console.log('Sign in successful. Data is: ', data.user)
   $('form').trigger('reset')
   $('#sign-out').show()
   $('#change-password').show()
@@ -64,6 +64,7 @@ const onSignOutSuccess = function () {
   $('#show-word').hide()
   $('#words').text('')
   $('#create-word').hide()
+  $('#delete-word-message').text('')
 }
 
 const onSignOutFailure = function () {
@@ -76,9 +77,9 @@ const onChangePasswordSuccess = function (data) {
   $('form').trigger('reset')
 }
 
-const onChangePasswordFailure = function (error) {
+const onChangePasswordFailure = function () {
   $('#change-password-message').text('Unable to change password')
-  console.log('Error is', error.status)
+  // console.log('Error is', error.status)
 }
 const onCreateWordSuccess = function (data) {
   $('#create-word-message').text('Created!')
@@ -99,7 +100,7 @@ const onShowWordsSuccess = function (data) {
   let wordTitlesHtml = ''
 
   words.forEach(word => {
-    console.log(word)
+    // console.log(word)
     wordTitlesHtml += `
     <button class='edit-word' data-id=${word._id}>Edit</button>
     <button class='dynamic-delete-word' data-id=${word._id}>Delete</button>
@@ -153,7 +154,7 @@ const onShowWordSuccess = function (data) {
     <p>Sentence: ${data.word.sentence}</p>
     <p>Word ID: ${data.word._id}</p>`)
   $('form').trigger('reset')
-  console.log('Data word is: ', data.word)
+  // console.log('Data word is: ', data.word)
 }
 
 const onShowWordFailure = function () {
