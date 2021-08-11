@@ -102,8 +102,6 @@ const onCreateWordFailure = function () {
   // console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
-  // display a message to the user once
-  $('#show-words-message').text('These are your words:')
   // console.log('Data in showWordSuccess is: ', data)
 
   // set words to be the word data
