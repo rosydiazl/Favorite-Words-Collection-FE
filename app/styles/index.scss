@@ -1,6 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
 
-
+h3 {
+  font-weight: 550;
+}
 #container
 {
   padding: 80px 15px;
@@ -119,6 +121,14 @@ a
   padding: 3px;
   padding-left: 5px;
 }
+.create-btn {
+  border-radius: 3px;
+  margin-top: 7px;
+  padding: 4px;
+  padding-left: 5px;
+  background-color: #0dcaf0;
+  border: none;
+}
 .dynamic-delete-word {
   background-color: #BD1616;
   border-radius: 3px;
@@ -128,7 +138,7 @@ a
   border: none;
   color: white;
 }
-.dynamic-update-word {
+.edit-word {
    background-color: rgb(46, 204, 113);
   border-radius: 3px;
   margin-top: 7px;
@@ -174,6 +184,10 @@ a
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#change-password-form {
+  text-align: center;
 }
 
 .book-image {
@@ -229,8 +243,9 @@ a
 }
 #title {
   float: left;
-  font-size: 1.5em;
+  font-size: 2em;
   pointer-events: none;
+  font-family: 'Sacramento', cursive;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
@@ -262,21 +277,43 @@ a
         z-index: 999;
         margin: 0 auto;
         left: 0;
-        right: 15%;
+        right: 25%;
         top: 30%; /* Adjust this value to move the positioned div up and down */
         text-align: left;
         width: 50%; /* Set the width of the positioned div */
+        font-family: 'Libre Baskerville', serif;
 }
 
 #create-word {
-  position: absolute;
-  float: right;
-  left: 0;
-  right: 15%;
-  top: 30%; /* Adjust this value to move the positioned div up and down */
-  width: 50%; /* Set the width of the positioned div */
+    position: absolute;
+    z-index: 999;
+   width: 100px;
+    margin: 50px;
+    float: right;
+    left: 1000px;
+    top: 25%;
 }
 
+#update-word {
+ position: absolute;
+    z-index: 999;
+   width: 100px;
+    margin: 50px;
+    float: right;
+    left: 1000px;
+    top: 70%;
+}
+#message {
+  position: absolute;
+  top: 12%;
+  text-align: center;
+  left: 700px;
+}
+#delete-word-message {
+  position: absolute;
+  top: 12%;
+  text-align: center;
+}
 
 .bottom-container {
   background-color: #323439;

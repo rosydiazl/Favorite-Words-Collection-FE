@@ -3,8 +3,12 @@
     <head>
       <title>Words Collection</title>
       <link rel="icon" href="app/favicon.ico">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Sacramento&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -14,7 +18,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <img src="app/Images/book.png" class="book-image">
+        <img src="app/Images/book.png" class="book-image">
       <section>
         <div id="container">
           <div class="row">
@@ -58,15 +62,16 @@
       <p class="text-center" id="message"></p>
       <p class="text-center" id="sign-out-message"></p>
       <div class="topnav" id="myTopNav">
-        <a href="#title" id="title">Favorite Words Collection</a>
+        <a href="#title" id="title"> Words Collection</a>
       <a  href="#sign-out" id="sign-out" type="submit">Sign out</a>
       <a href="#change-password" id="change-password" type="submit">Change password</a>
-      <a href="#words" id="words-index">My words</a>
       <a href="#create" id="createWords">Create word</a>
+      <a href="#words" id="words-index">My words</a>
       <a href="javascript:void(0);" class="icon">
         <i class="fa fa-bars"></i>
         </a>
       </div>
+      <div class="overlay">
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -82,19 +87,7 @@
           <p id="change-password-message"></p>
         </div>
       </div>
-      <form id="create-word">
-        <label>Word</label>
-      <input name="word[word]" type="text">
-      <label>Definition</label>
-      <input name="word[definition]" type="text">
-      <label>Origin</label>
-      <input name="word[origin]" type="text">
-      <label>Language</label>
-      <input name="word[language]" type="text">
-      <label>Sentence</label>
-      <input name="word[sentence]" type="text">
-      <input type="submit" value="Create">
-      </form>
+      </div>
       <form id="update-word">
         <label>Word ID</label>
         <input name="word[_id]" type="text">
@@ -108,7 +101,8 @@
         <input name="word[language]" type="text">
         <label>Sentence</label>
         <input name="word[sentence]" type="text">
-        <input type="submit" value="Update">
+        <input class="create-btn" type="submit" value="Update">
+        <p id="update-word-message"></p>
       </form>
       <form id="show-word">
         <label>Word ID</label>
@@ -116,11 +110,26 @@
         <input type="submit" value="Show">
       </form>
       <p id="delete-word-message"></p>
-      <p id="update-word-message"></p>
-      <p id="create-word-message"></p>
       <p id="show-words-message"></p>
-      <div id="words"></div>
+      <div id="words">
+      </div>
       <div id="shown-word"></div>
+      <form id="create-word">
+        <label>Word</label>
+        <input name="word[word]" type="text">
+        <label>Definition</label>
+        <input name="word[definition]" type="text">
+        <label>Origin</label>
+        <input name="word[origin]" type="text">
+        <label>Language</label>
+        <input name="word[language]" type="text">
+        <label>Sentence</label>
+        <input name="word[sentence]" type="text">
+        <input class="create-btn" type="submit" value="Create">
+        <p id="create-word-message"></p>
+      </form>
+
+
       <footer>
         <div class="bottom-container">
           <a class="footer-link" href="https://www.linkedin.com/in/rosy-diaz/"><strong>LinkedIn</strong></a>

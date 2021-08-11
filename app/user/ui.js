@@ -1,11 +1,18 @@
 'use strict'
 const store = require('../store')
 
+const hideMessageTimer = () => {
+  setTimeout(() => {
+    $('#message').hide()
+  }, 3500)
+}
+
 const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully!')
   // console.log('Sign up successful. Data is: ', data)
   $('form').trigger('reset')
   // $('.btn-signup').hide()
+  hideMessageTimer()
 }
 
 const onSignUpFailure = function () {
@@ -28,11 +35,12 @@ const onSignInSuccess = function (data) {
   $('.book-image').show()
   // $('#create-word').show()
   $('#words-index').show()
-  $('#update-word').show()
   $('#delete-word').show()
-  $('#show-word').show()
+  // $('#show-word').show()
   $('#myTopNav').show()
   $('.bottom-container').hide()
+  // $('#update-word').show()
+  hideMessageTimer()
 }
 
 const onSignInFailure = function () {
@@ -54,6 +62,8 @@ const onSignOutSuccess = function () {
   $('#update-word').hide()
   $('#delete-word').hide()
   $('#show-word').hide()
+  $('#words').text('')
+  $('#create-word').hide()
 }
 
 const onSignOutFailure = function () {
@@ -71,19 +81,19 @@ const onChangePasswordFailure = function (error) {
   console.log('Error is', error.status)
 }
 const onCreateWordSuccess = function (data) {
-  $('#create-word-message').text('Word has been created')
+  $('#create-word-message').text('Created!')
   $('form').trigger('reset')
-  console.log('Data is: ', data)
+  // console.log('Data is: ', data)
 }
 
-const onCreateWordFailure = function (error) {
-  $('#create-word-message').text('Unable to create word')
-  console.log('Error is: ', error.status)
+const onCreateWordFailure = function () {
+  $('#create-word-message').text('Unable to create word.')
+  // console.log('Error is: ', error.status)
 }
 const onShowWordsSuccess = function (data) {
   $('#show-words-message').text('')
-  $('#create-word-message').text('')
-  console.log('Data in showWordSuccess is: ', data)
+  // $('#create-word-message').text('')
+  // console.log('Data in showWordSuccess is: ', data)
   const words = data.words
 
   let wordTitlesHtml = ''
@@ -91,14 +101,15 @@ const onShowWordsSuccess = function (data) {
   words.forEach(word => {
     console.log(word)
     wordTitlesHtml += `
-    <button class='dynamic-update-word' data-id=${word._id}>Edit</button>
+    <button class='edit-word' data-id=${word._id}>Edit</button>
     <button class='dynamic-delete-word' data-id=${word._id}>Delete</button>
-    <h5> ${word.word}</h5>
+    <h3> <strong> ${word.word} </strong></h3>
     <p> Definition: ${word.definition} </p>
     <p> Origin: ${word.origin} </p>
     <p> Language: ${word.language} </p>
     <p> Sentence: ${word.sentence}</p>
-  `;
+    <p> Word ID: ${word._id}</p>
+  `
   })
 
   if (data.words.length === 0) {
@@ -113,15 +124,16 @@ const onShowWordsFailure = function () {
   // console.log('Error is: ', error.status)
 }
 const onUpdateWordSuccess = function (response) {
-  $('#update-word-message').text('Word was updated successfully')
+  $('#update-word-message').text('Updated!')
   // console.log(`Server response: ${response}`)
   $('form').trigger('reset')
 }
 
 const onUpdateWordFailure = function () {
-  $('#update-word-message').text('Unable to update word')
+  $('#update-word-message').text('Unable to update word.')
   // console.log('Error is ', error.status)
 }
+
 const onDeleteWordSuccess = function () {
   $('#delete-word-message').text('Word was deleted successfully.')
   // console.log(`Server response: ${response}`)
@@ -133,13 +145,13 @@ const onDeleteWordFailure = function () {
   // console.log('Error is ', error.status)
 }
 const onShowWordSuccess = function (data) {
-  $('#delete-word-message').text('Word was shown successfully.')
   $('#shown-word').html(`
   <p> Word: ${data.word.word}</p>
     <p> Definition: ${data.word.definition}</p>
     <p>Origin: ${data.word.origin}</p>
     <p>Language: ${data.word.language}</p>
-    <p>Sentence: ${data.word.sentence}</p>`)
+    <p>Sentence: ${data.word.sentence}</p>
+    <p>Word ID: ${data.word._id}</p>`)
   $('form').trigger('reset')
   console.log('Data word is: ', data.word)
 }
@@ -148,6 +160,7 @@ const onShowWordFailure = function () {
   $('#delete-word-message').text('Unable to show word')
   // console.log('Error is ', error.status)
 }
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -166,5 +179,6 @@ module.exports = {
   onDeleteWordSuccess,
   onDeleteWordFailure,
   onShowWordSuccess,
-  onShowWordFailure
+  onShowWordFailure,
+  hideMessageTimer
 }

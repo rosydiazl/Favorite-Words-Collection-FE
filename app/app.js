@@ -11,7 +11,6 @@ $(() => {
   $('#sign-in').on('submit', userEvents.onSignIn)
   $('#change-password-form').on('submit', userEvents.onChangePassword)
   $('#update-word').on('submit', userEvents.onUpdateWord)
-  $('#update-word').hide()
   $('#create-word').on('submit', userEvents.onCreateWord)
   $('#create-word').hide()
   $('#words-index').on('click', userEvents.onShowWords)
@@ -28,15 +27,32 @@ $(() => {
   $('.btn-login').hide()
   $('#myTopNav').hide()
   $('#words').on('click', '.dynamic-delete-word', userEvents.onDynamicDeleteWord)
+  // $('#words').on('click', '.edit-word', userEvents.onDynamicUpdateWord)
+  // $('#words').on('click', '.edit-word', userEvents.onDynamicUpdateWord)
+  // $('#words').on('click', '.edit-word', userEvents.onDynamicUpdateWord)
+  $('#update-word').hide()
 })
 
 // $('#delete-word').on('click', function () {
- // $('.dataId').data()
- // $('#delete-word').on(userEvents.onDeleteWord)
+// $('.dataId').data()
+// $('#delete-word').on(userEvents.onDeleteWord)
 // })
+$('#words-index').on('click', function () {
+  $('#delete-word-message').text('')
+  $('#create-word-message').text('')
+  $('#update-word-message').text('')
+})
 $('#createWords').on('click', function () {
   $('#create-word').show()
 })
+$('#words').on('click', '.edit-word', function () {
+  // console.log('CLICKEDD!!')
+  $('#update-word').show()
+})
+
+// $('#change-password').on('click', function () {
+// $('.overlay').show()
+// })
 
 $('.btn-signup').click(function () {
   $(this).addClass('hidden')
@@ -80,6 +96,7 @@ window.onclick = function (event) {
     modal.style.display = 'none'
   }
 }
+
 /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
 const myFunction = function () {
   const x = document.getElementById('myTopNav')
