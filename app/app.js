@@ -41,6 +41,7 @@ $('#words-index').on('click', function () {
   $('#delete-word-message').text('')
   $('#create-word-message').text('')
   $('#update-word-message').text('')
+  // $('#show-words-message').text('')
 })
 $('#createWords').on('click', function () {
   $('#create-word').show()
