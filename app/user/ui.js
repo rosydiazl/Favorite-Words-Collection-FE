@@ -65,6 +65,7 @@ const onSignOutSuccess = function () {
   $('#words').text('')
   $('#create-word').hide()
   $('#delete-word-message').text('')
+  $('#show-words-message').text('')
 }
 
 const onSignOutFailure = function () {
