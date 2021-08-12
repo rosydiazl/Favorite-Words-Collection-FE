@@ -110,9 +110,10 @@ const onShowWordsSuccess = function (data) {
   let wordTitlesHtml = ''
 
   // forEach loop that iterates through all of the words that have been created
-  // edit button and delete button are storing the word's ID in the DOM
+  // delete button is storing the word's ID in the DOM
+  // use delete button's class to dynamically delete the word.
 
-  // The other elements are pulling the word data in order to display it as shown below to the user they belong to
+  // The other elements are pulling the word data in order to display it as shown below to the user the words belong to
   words.forEach(word => {
     // console.log(word)
     wordTitlesHtml += `

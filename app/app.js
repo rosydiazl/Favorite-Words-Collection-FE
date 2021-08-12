@@ -55,27 +55,33 @@ $('#words').on('click', '.edit-word', function () {
 // $('.overlay').show()
 // })
 
-$('.btn-signup').click(function () {
+$('.btn-signup').on('click', function () {
+  // add and remove classes to add CSS that rotates the sign in and sign up
   $(this).addClass('hidden')
   $('.signup').addClass('show')
   $('.login').removeClass('show')
   $('.btn-login').removeClass('hidden')
+  // show sign in form after sign up click
   $('.btn-login').show()
+  // hide sign up after sign up click
   $('.btn-signup').hide()
 })
-$('.btn-login').click(function () {
+$('.btn-login').on('click', function () {
+  // add and remove classes to add CSS that rotates the sign in and sign up
   $(this).addClass('hidden')
   $('.signup').removeClass('show')
   $('.login').addClass('show')
   $('.btn-signup').removeClass('hidden')
+  // hide log in after user clicks on sign in
   $('.btn-login').hide()
+  // show sign up button after user clicks on sign in
   $('.btn-signup').show()
 })
 
-// Get the modal
+// Getting the modal by ID
 const modal = document.getElementById('myModal')
 
-// Get the button that opens the modal
+// Getting the button that opens the modal by ID
 const btn = document.getElementById('change-password')
 
 // Get the <span> element that closes the modal
