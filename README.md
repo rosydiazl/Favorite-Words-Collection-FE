@@ -28,7 +28,7 @@ The reason that I decided to create this specific app is that I absolutely love 
 
 ## WIREFRAME LINK
 
-[Link to EDR](https://imgur.com/IlzaR5k)
+[Link to wireframe](https://imgur.com/IlzaR5k)
 
 ## PLANNING 
 

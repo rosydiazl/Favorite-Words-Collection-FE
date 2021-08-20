@@ -61,6 +61,8 @@ const onSignOutSuccess = function () {
   // $('form').trigger('reset')
   // console.log('Sign out successfully and nothing was returned.')
   $('#sign-in').show()
+  $('#sign-up').show()
+  $('.btn-signup').show()
   $('#sign-out').hide()
   $('.tile').show()
   $('#change-password').hide()
